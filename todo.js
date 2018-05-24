@@ -23,6 +23,7 @@ todoTextElement.onkeyup = function(e){
     return false;
 
   addNewItem(document.getElementById('todoList'),todoText);
+  todoTextElement.select();
 }
 
-};  
+};
