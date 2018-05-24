@@ -7,19 +7,23 @@ function addNewItem(list,todoText){
 
 }
 
-
-var btnNew = document.getElementById("btnAdd");
-
 var todoTextElement = document.getElementById('inItemText');// getting DOM
 todoTextElement.focus(); // keeps cursor blinking on input text space intially
 
-btnNew.onclick = function(){
+todoTextElement.onkeyup = function(e){
 
-  var todoTextElement = document.getElementById('inItemText');
+  // capture the event using e. Sent by browser by default
+  // Add item only if key pressed is enter. ASCII for enter is 13
+
+  if(e.which == 13){
+
   var todoText = todoTextElement.value;
 
   if(!todoText || todoText == "")
     return false;
 
   addNewItem(document.getElementById('todoList'),todoText);
+  todoTextElement.select();
+}
+
 };
