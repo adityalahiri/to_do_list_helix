@@ -7,15 +7,11 @@ function addNewItem(list,todoText){
 
 }
 
-
-var btnNew = document.getElementById("btnAdd");
-
 var todoTextElement = document.getElementById('inItemText');// getting DOM
 todoTextElement.focus(); // keeps cursor blinking on input text space intially
 
-btnNew.onclick = function(){
+todoTextElement.onkeyup = function(){
 
-  var todoTextElement = document.getElementById('inItemText');
   var todoText = todoTextElement.value;
 
   if(!todoText || todoText == "")
