@@ -3,6 +3,7 @@ function addNewItem(list,todoText){
   totalItems++;
 
   var listItem = document.createElement("li");// create list element
+  listItem.id = "li_" + totalItems;
 
   // by setting attribute innerText of listItem checkbox came after text so did not use
 
@@ -19,9 +20,32 @@ function addNewItem(list,todoText){
   var span = document.createElement("span");
   span.innerText = todoText;
   span.id = "text_" + totalItems;
+  span.contentEditable = true;
+
+  // calling editing the span text
+
+  span.onkeyup = function(e){
+
+    if(e.which == 13){
+      span.innerText = span.innerText.trim();
+      span.contentEditable = false;
+      span.contentEditable = true;
+      return;
+
+  }
+
+  };
+
+  var delButton = document.createElement("button");
+  delButton.type = "button";
+  delButton.innerText = "Delete";
+  delButton.id = "but_" + totalItems;
+
+  delButton.onclick = removeNote;
 
   listItem.append(inputEle);//first adding checkbox as child
   listItem.append(span);//now adding text as child
+  listItem.append(delButton);//to delete a Note
 
   list.append(listItem);//adding new item to list
 
@@ -48,6 +72,21 @@ function updateItemStatus(){
     note.style.font = "none";
 
   }
+}
+
+function editNote(){
+
+  var curr = this.id.replace("text_","");
+  var note = document.getElementById("li_"+curr);
+
+}
+
+function removeNote(){
+
+  var curr = this.id.replace("but_","");
+  var note = document.getElementById("li_"+curr);
+  note.style.display = "none";
+
 }
 
 
