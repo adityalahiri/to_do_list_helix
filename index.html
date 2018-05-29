@@ -4,12 +4,58 @@
   <meta charset="UTF-8">
   <title>TODO LIST </title>
   <style>
+  body{
+    background-color: #d2b48c;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+  }
+  h1{
+    font-size: 70px;
+  }
   h2 {
-    color: green;
+    color: red;
+    margin-top: -40px;
   }
-    body {
-    background-color: rgba(62, 123, 111, 0.37);
+  .check{
+width: 20px;
+height: 20px;
+margin-left: 0;
   }
+  .list{
+    list-style-type: none;
+  }
+  .sp{
+    font-size: 20px;
+    padding: 1px;
+    width: 50%;
+
+
+}
+.button{
+  padding: 0.5px 2px;
+  border-radius: 5px;
+  border-color: grey;
+  font-weight: bold;
+
+
+}
+#todoList{
+  text-align: left;
+  margin-left: 15%;
+}
+  .button:hover{
+    color: red;
+
+  }
+  .check:hover{
+    box-shadow: 1px 1px 1px grey;
+  }
+  h3,h4{
+    font-size: 30px;
+  }
+
+
   #btnAdd {
     cursor: pointer;
   }
@@ -20,6 +66,12 @@
             color: #f4442f;
             text-decoration: line-through;
         }
+  #inItemText{
+background-color: #d2b48c;
+border: 0;
+outline: none;
+border-bottom: 2px dotted black;
+  }
   </style>
 </head>
 <body>
@@ -27,12 +79,12 @@
 -->
   <h1>To-Do</h1>
   <h2>By Helix Tech</h2>
-  <img src="http://www.growthengineering.co.uk/wp-content/uploads/2014/07/To-Do-List.png" alt="Our To Do List" width="270" height="270" data-wp-pid="6388"><br/>
+
 <h3>Add New Note</h3>
 <input type="text" id="inItemText" />
 <h4> Tasks to be Completed</h4>
 <ul id="todoList">
-  
+
 
 <!- Importing JavaScript ->
 

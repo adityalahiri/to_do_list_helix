@@ -2,14 +2,15 @@ function addNewItem(list,todoText){
 
   totalItems++;
 
-  var listItem = document.createElement("li");// create list element
+  var listItem = document.createElement("form");// create list element
   listItem.id = "li_" + totalItems;
-
+  listItem.classList.add("list");
   // by setting attribute innerText of listItem checkbox came after text so did not use
 
   var inputEle = document.createElement("input");// creating input element
   inputEle.type="checkbox";//setting its type to a checkbox
   inputEle.id = "cb_"+ totalItems;
+  inputEle.classList.add("check");
 
   //on click checkbox
 
@@ -21,6 +22,7 @@ function addNewItem(list,todoText){
   span.innerText = todoText;
   span.id = "text_" + totalItems;
   span.contentEditable = true;
+  span.classList.add("sp");
 
   // calling editing the span text
 
@@ -38,14 +40,16 @@ function addNewItem(list,todoText){
 
   var delButton = document.createElement("button");
   delButton.type = "button";
-  delButton.innerText = "Delete";
+  delButton.innerText = "x";
   delButton.id = "but_" + totalItems;
+  delButton.classList.add("button");
 
   delButton.onclick = removeNote;
 
   listItem.append(inputEle);//first adding checkbox as child
-  listItem.append(span);//now adding text as child
   listItem.append(delButton);//to delete a Note
+  listItem.append(span);//now adding text as child
+
 
   list.append(listItem);//adding new item to list
 
